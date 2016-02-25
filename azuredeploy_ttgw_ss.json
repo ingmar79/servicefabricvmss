@@ -807,7 +807,7 @@
             "name": "appGwIpConfig",
             "properties": {
               "subnet": {
-                "id": "[variables('dmzSubnetRef')]"
+                "id": "[variables('subnetGW')]"
               }
             }
           }
