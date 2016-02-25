@@ -1,0 +1,48 @@
+  {
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "clusterLocation": {
+        "value": "West US"
+      },     
+      "clusterName": {
+        "value": "tthdpp11"
+      },
+      "vmStorageAccountName": {
+        "value": "tthdpp11inf"
+      },
+      "adminUserName": {
+        "value": "gonzalorcsa"
+      },
+      "adminPassword": {
+        "value": ""
+      },
+      "dnsName": {
+        "value": "ttdev11"
+      },
+      "vmSize": {
+        "value": "Standard_DS1"
+      },
+      "numberOfNodes": {
+        "value": 3
+      },
+      "clusterProtectionLevel": {
+        "value": "EncryptAndSign"
+      },
+      "certificateStoreValue": {
+        "value": "My"
+      },
+      "certificateThumbprint": {
+        "value": ""
+      },
+      "sourceVaultValue": {
+        "value": ""
+      },
+      "certificateUrlValue": {
+        "value": "" 
+      }
+
+
+    }
+    
+}
