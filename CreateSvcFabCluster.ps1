@@ -205,7 +205,7 @@ $location = 'North Europe'
 $currentLocation = Get-Location
 
 ##### Parameters - Names
-$appName = "YOUR_NAME"
+$appName = "YOUR_APP"
 $dnsName = "$appName$instanceNumber"
 $resourceGroupName = "$appName$instanceNumber"
 $deploymentName ="svcfabcluster-Initial"
@@ -224,8 +224,8 @@ $parametersFileLocation = "$currentLocation\azuredeploy-parameters.json"
 ################ Corp Network #####################
 if($corpNetwork -eq $null) {
         #$corpNetwork = (Invoke-WebRequest http://myexternalip.com/raw).Content
-        $corpNetwork = "81.102.218.86/32"
-        #$corpNetwork = "31.221.76.92/32"
+        $corpNetwork = "YOUR_CORPNETWORK"
+        #$corpNetwork = "*"
 }
 
 if($certificatePassword -eq $null) {
