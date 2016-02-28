@@ -199,13 +199,13 @@ function EnableAuditing()
 clear
 
 ##### Parameters - ResourceGroup & KeyVault
-$instanceNumber = (Get-Date -format ddMM) + "01"
+$instanceNumber = (Get-Date -format ddMM) + "02"
 #$instanceNumber = "010208"
 $location = 'North Europe'
 $currentLocation = Get-Location
 
 ##### Parameters - Names
-$appName = "YOUR_APP"
+$appName = "tthd"
 $dnsName = "$appName$instanceNumber"
 $resourceGroupName = "$appName$instanceNumber"
 $deploymentName ="svcfabcluster-Initial"
@@ -224,8 +224,8 @@ $parametersFileLocation = "$currentLocation\azuredeploy-parameters.json"
 ################ Corp Network #####################
 if($corpNetwork -eq $null) {
         #$corpNetwork = (Invoke-WebRequest http://myexternalip.com/raw).Content
-        $corpNetwork = "YOUR_CORPNETWORK"
-        #$corpNetwork = "*"
+        #$corpNetwork = "YOUR_CORPNETWORK"
+        $corpNetwork = "*"
 }
 
 if($certificatePassword -eq $null) {
