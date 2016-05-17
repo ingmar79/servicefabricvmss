@@ -194,10 +194,12 @@
     "avSetSvcFab": "avSetSvcFab",
     "avSetMgmnt": "avSetMgmnt",
     "applicationGatewayName": "appwgtosvcfab",
+     "appGatewayBackendPoolName": "appGatewayBackendPool",
     "publicGWIPAddressName": "appgwsvcfab",
 
     "publicGwIPRef": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicGWIPAddressName'))]",
     "applicationGatewayRef": "[resourceId('Microsoft.Network/applicationGateways',variables('applicationGatewayName'))]",
+    "lbGatewayPoolID": "[concat(variables('applicationGatewayRef'),'/backendAddressPools/', variables('appGatewayBackendPoolName'))]",
     "apiVersion": "2015-05-01-preview",
 
     "vmImagePublisher": "MicrosoftWindowsServer",
@@ -587,6 +589,8 @@
                           "id": "[variables('svcFabSubnetRef')]"
                         },
                         "privateIPAllocationMethod": "Dynamic",
+                        "applicationGatewayBackendAddressPools":  [
+                          { "id": "[variables('lbGatewayPoolID')]",
                         "loadBalancerBackendAddressPools": [
                           { "id": "[variables('lbPoolID')]" }
                         ]
@@ -856,20 +860,7 @@
         ],
         "backendAddressPools": [
           {
-            "name": "appGwBackendPool",
-            "properties": {
-              "BackendAddresses": [
-                {
-                  "IpAddress": "10.0.2.4"
-                },
-                {
-                  "IpAddress": "10.0.2.5"
-                },
-                {
-                  "IpAddress": "10.0.2.6"
-                }
-              ]
-            }
+             "name": "[variables('appGatewayBackendPoolName')]"
           }
         ],
         "backendHttpSettingsCollection": [
